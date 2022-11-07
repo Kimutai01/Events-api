@@ -8,5 +8,6 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.string :date
       t.string :time
       t.string :description
+    end
   end
 end
