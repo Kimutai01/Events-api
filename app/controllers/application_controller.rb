@@ -33,5 +33,8 @@ class ApplicationController < Sinatra::Base
     Speaker.all.to_json
   end
 
-
+  post '/speakers' do
+    speaker = Speaker.create(params)
+    speaker.to_json
+  end
 end
