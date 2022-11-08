@@ -37,4 +37,21 @@ class ApplicationController < Sinatra::Base
     speaker = Speaker.create(params)
     speaker.to_json
   end
+   
+  get '/speakers/:id' do
+    speaker = Speaker.find(params[:id])
+    speaker.to_json
+  end
+
+  patch '/speakers/:id' do
+    speaker = Speaker.find(params[:id])
+    speaker.update(params)
+    speaker.to_json
+  end
+
+  delete '/speakers/:id' do
+    speaker = Speaker.find(params[:id])
+    speaker.delete
+    speaker.to_json
+  end
 end
