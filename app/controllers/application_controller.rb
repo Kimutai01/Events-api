@@ -54,4 +54,28 @@ class ApplicationController < Sinatra::Base
     speaker.delete
     speaker.to_json
   end
+
+  patch '/attendees/:id' do
+    attendee = Attendee.find(params[:id])
+    attendee.update(params)
+    attendee.to_json
+  end
+
+  delete '/attendees/:id' do
+    attendee = Attendee.find(params[:id])
+    attendee.delete
+    attendee.to_json
+  end
+
+  delete '/events/:id' do
+    event = Event.find(params[:id])
+    event.delete
+    event.to_json
+  end
+
+  get '/attendees/:id' do
+    attendee = Attendee.find(params[:id])
+    attendee.to_json
+  end
+
 end
